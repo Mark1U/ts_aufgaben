@@ -34,14 +34,14 @@ console.log({ salesMonth, quartal });
 
 let totalSales = Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000;
 let totalSalesIdx = Math.floor(totalSales / 2500);
-let res2: string;
+let quartalSalesGrade: string;
 switch (totalSalesIdx) {
-    case 0: res2 = "“schlecht”"; break;
-    case 1: res2 = "“mittelmäßig”"; break;
-    case 2: res2 = "“hoch”"; break;
-    case 3: res2 = "“unglaublich”"; break;
-    default: res2 = "???";
+    case 0: quartalSalesGrade = "schlecht"; break;
+    case 1: quartalSalesGrade = "mittelmäßig"; break;
+    case 2: quartalSalesGrade = "hoch"; break;
+    case 3: quartalSalesGrade = "unglaublich"; break;
+    default: quartalSalesGrade = "???";
 }
-console.log({ totalSales, totalSalesIdx, res2 });
+console.log({ totalSales, totalSalesIdx, quartalSalesGrade });
 
-console.log(`'Im 3. Quartal war der Umsatz ${res2}!'`);
+console.log(`'Im ${quartal} war der Umsatz ${quartalSalesGrade}!'`);

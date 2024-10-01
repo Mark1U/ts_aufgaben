@@ -12,3 +12,11 @@ import './style.css'
 // `
 
 // setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
+let res = window?.location?.href?.match("/aufgaben/([^/]*)/");
+let aufgabe = (res && res?.length > 1) ? res[1] : "---";
+
+let h1Elem = document.querySelector<HTMLButtonElement>('h1');
+if (h1Elem) {
+    h1Elem.innerHTML = "Aufgabe: " + aufgabe;
+}

@@ -58,11 +58,10 @@ console.log(bucketList);
 
 console.log(`%c Array 1_8`, "background: red;clor: gray;");
 
-const pos: number = bucketList.length / 2;
-let lieblingsreiseziele: string[] = bucketList.slice(0, pos).concat("_Stadt1", "_Stadt2").concat(bucketList.slice(pos + 1, -1));
+let lieblingsreiseziele: string[] = ["ZielA", "_ZielB", "_ZielC", "ZielD", "ZielE"];
 console.log(lieblingsreiseziele);
 
-lieblingsreiseziele = lieblingsreiseziele.slice();
+lieblingsreiseziele = lieblingsreiseziele.slice(1, 3);
 console.log(lieblingsreiseziele);
 
 console.log(`%c Array 1_9`, "background: red;clor: gray;");

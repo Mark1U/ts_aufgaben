@@ -4,7 +4,7 @@ function check() {
     let res: string = "";
 
     if (bundeslandInfo.length >= 4) {
-        let bundeslandInfoShort: string = bundeslandInfo.substring(0, 4).indexOf("sachen-A") > -1 ?
+        let bundeslandInfoShort: string = bundeslandInfo.toLowerCase().indexOf("sachsen-a") > -1 ?
             "sach-a" : bundeslandInfo.substring(0, 4).toLowerCase();
         console.log({ bundeslandInfoShort, bundeslandInfo });
 

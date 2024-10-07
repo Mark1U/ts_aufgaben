@@ -112,3 +112,13 @@ console.log(actorsSpreadCopy);
 
 
 
+const emailArr: string[] = ["steffen@super-code.de", "marco@super-code.de", "max@super-code.de", "batman@gotham.de", "spidy@hero.nyc"];
+
+const inputEmail = document.querySelector("#email") as HTMLInputElement;
+
+document.querySelector("#formBtn")?.addEventListener('click',
+    (e) => {
+        e.preventDefault();
+        console.log(emailArr.includes(inputEmail.value.toLowerCase()) ? "Welcome Back" : "Du musst dich registrieren");
+    }
+)

@@ -104,7 +104,7 @@ let artworkDates: string[] = [
     "Der Garten der Lüste - 1505"
 ];
 
-function findArtwork(artworkName: string) {
+const findArtwork = (artworkName: string) => {
     const artWork: string | undefined = artWorks.find(x => x.includes(artworkName));
     const artworkDate: string | undefined = artworkDates.find(x => x.includes(artworkName));
 

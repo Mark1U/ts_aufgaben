@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgaben </title>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 10px;
+            background-color: blue;
+            border-radius: 5px;
+            border: 0px solid white;
+            color: white;
+            width: 60px;
+            height: 32px;
+        }
+
+        #mealList {
+            margin-top: 20px;
+        }
+
+        .mealInputDiv {
+            width: 300px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            width: 100%;
+            border-radius: 5px;
+            background-color: rgb(218, 217, 217);
+            padding: 6px 20px;
+            margin-top: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Meal Planner</h1>
+
+    <div class="mealInputDiv">
+        <input type="text" id="mealInput" placeholder="Enter Meal Name">
+        <button id="addMealBtn">+Meal</button>
+    </div>
+
+    <select id="weekSelector" title="Selected Week">
+        <option value="0">Week 1</option>
+        <option value="1">Week 2</option>
+        <option value="2">Week 3</option>
+        <option value="3">Week 4</option>
+    </select>
+
+    <div id="mealList">
+        <ul id="meals"></ul>
+    </div>
+    <script type="module" src="./main.ts"></script>
+</body>
+
+</html>

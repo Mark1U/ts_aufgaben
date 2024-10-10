@@ -95,7 +95,7 @@ getNumberOfVowels("Hallo World!");
 console.log(`%c for loops 2_4`, "background: red;clor: gray;");
 
 const addToFifty = () => {
-    for (let count = 0; count < 50;) {
+    for (let count = 0; count <= 50;) {
         count += Math.floor(Math.random() * 10) + 1;
         if (count > 50) {
             console.log("Wert über 50: " + count);

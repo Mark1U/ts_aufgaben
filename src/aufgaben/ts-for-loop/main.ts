@@ -204,3 +204,5 @@ console.log(sum2);
 console.log(resultsArr.length);
 
 console.log(getNote(avg));
+
+

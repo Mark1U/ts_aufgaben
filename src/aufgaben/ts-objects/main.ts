@@ -217,3 +217,17 @@ const encodeMorseCode = (txt: string): string => {
 }
 
 console.log(encodeMorseCode(inputText));
+
+
+
+
+console.log(`%c WDH: For Loops`, "background: tomato;clor: gray;");
+
+const iphone = {
+    size: "6",
+    ram: 3,
+    color: "black"
+}
+for (let key in iphone) {
+    console.log(key);    //"A" 1, "B" 2, "C" 3
+} 

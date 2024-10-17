@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgaben </title>
+    <style>
+        #output {
+            display: flex;
+        }
+
+        .style {
+            display: inline-block;
+            border-radius: 5px;
+            background: #666;
+            color: white;
+            padding: 5px;
+        }
+
+        .example {
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .listContainer {
+            display: flex;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+
+        input[type='text'],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type='submit'] {
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type='submit']:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="headline">DOM</h1>
+
+
+    <h1>Meine Einkaufsliste</h1>
+
+    <input type="text" id="inputText" placeholder="Ich benötige..." />
+    <button>Hinzufügen</button>
+
+    <ul id="myList">
+        <!-- Hier werden die dynamisch hinzugefügten Elemente erscheinen -->
+    </ul>
+
+    <h1>Meine Styles 1_2</h1>
+
+    <div class="style">
+        <div class="example">Ein div mit class="example".</div>
+
+        <div class="example">Ein weiteres div mit class="example".</div>
+
+        <p class="example">Dies ist ein p-Element mit class="example"</p>
+
+        <p>Dies ist ein <span class="example">span</span> Element mit class="example" in einem anderen p-Element.</p>
+
+        <p>Klicken Sie auf die Button, um die Hintergrundfarbe aller Elemente mit class="example" zu ändern.</p>
+
+        <button class="example">Versuchen Sie es</button>
+    </div>
+
+
+    <h1>Liste 1_9</h1>
+    <form>
+        <select title="Farbe Auswahlen" id="farbeAuswahlen">
+            <option>Medium Orchid</option>
+            <option>Mint Cream</option>
+            <option>Dodger Blue</option>
+            <option>Goldenrod</option>
+            <option>Wheat</option>
+            <option>Medium Turquoise</option>
+            <option>Moccasin</option>
+            <option>Fire Brick</option>
+            <option>Lime Green</option>
+            <option>Slate Gray</option>
+        </select>
+        <button type="button" id="btn3">Farbe von Liste Entfernen</button>
+    </form>
+
+    <h1>Liste 2_1</h1>
+    <ul id="listContainer">
+        <!-- <div class="listContainer"> -->
+        <li><a class="nav" id="navHome" href="#home">Home</a></li>
+        <li><a class="nav" id="navNews" href="#news">News</a></li>
+        <li><a class="nav" id="navContact" href="#contact">Contact</a></li>
+        <!-- </div> -->
+        <li class="nav"><a class="active" id="navChange">Change me</a></li>
+    </ul>
+
+    <h1>Liste 2_2</h1>
+    <div>
+        <form id="form1">
+            <label for="vorname">Vorname</label><input type="text" id="vorname" name="vorname"
+                placeholder="Dein Name..." /><label for="nachname">Last Name</label><input type="text" id="nachname"
+                name="nachname" placeholder="Dein Nachname..." /><label for="land">Land</label><select id="land"
+                name="land">
+                <option value="Australia">Australia</option>
+                <option value="Canada">Canada</option>
+                <option value="Usa">USA</option>
+            </select><input type="submit" value="Submit" />
+        </form>
+    </div>
+
+
+    <h1>Random Pictures 2_6</h1>
+    <button id="rndBtn">Click Me</button>
+    <div id="output"></div>
+    <script type="module" src="./main.ts"></script>
+</body>
+
+</html>

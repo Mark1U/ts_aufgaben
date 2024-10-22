@@ -9,7 +9,6 @@ const caesar = (text: string, delta: number): string => {
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let output = "";
     for (let inputChar of text.toUpperCase().split("")) {
-
         if (inputChar == " ") {
             output += " "
         } else {
@@ -18,7 +17,6 @@ const caesar = (text: string, delta: number): string => {
                 output += alphabet[(pos + delta) % 26]
             }
         }
-
     }
 
     return output;
@@ -39,3 +37,8 @@ decBtn.addEventListener("click", (e) => {
     e.preventDefault()
     output.textContent = caesar(input.value, -1 * Number(deltaInput.value))
 })
+
+const values: number[] = [1, 2, 3];
+values
+    .filter(x => x)
+    .includes(123)

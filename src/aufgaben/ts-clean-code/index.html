@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgaben </title>
+</head>
+
+<body>
+    <h1>Clean Code</h1>
+
+
+    <h1>Brutto-Netto-Rechner</h1>
+    <form id="calculatorForm">
+        <label for="bruttoInput">Bruttogehalt:</label>
+        <input type="number" id="bruttoInput" name="bruttoInput" required />
+        <br />
+        <label for="steuerKlasseInput">Steuerklasse:</label>
+        <select id="steuerKlasseInput" name="steuerKlasseInput">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <br />
+        <button type="submit">Berechnen</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script type="module" src="./main_2_1.ts"></script>
+    <!-- <script type="module" src="./main_3_1.ts"></script> -->
+    <script type="module" src="./main_3_2.ts"></script>
+</body>
+
+</html>

@@ -65,6 +65,29 @@ button1?.addEventListener("click", (e) => {
 })
 
 
+for (let i = 0; i < 20; i++) {
+    const animalNames: string[] = [
+        "Simba the Lion", "Dumbo the Elephant", "Shere Khan the Tiger", "Baloo the Bear", "George the Monkey",
+        "Flipper the Dolphin", "Pingu the Penguin", "Melman the Giraffe", "Marty the Zebra", "Jack the Kangaroo",
+        "Snapper the Crocodile", "Polly the Parrot", "Freedom the Eagle", "Jaws the Shark", "Inky the Octopus",
+        "Po the Panda", "Rocky the Rhinoceros", "Harry the Hippopotamus", "Pinkie the Flamingo", "Kenny the Koala"
+    ];
+
+    const rnd = Math.ceil(Math.random() * 100);
+
+    allAnimals.push(new Animal(
+        gehege[rnd % 4].id,
+        animalList[rnd % animalList.length].emoji,
+        animalList[rnd % animalList.length].tierName,
+        animalList[rnd % animalList.length].type,
+        animalNames[rnd % animalNames.length],
+        Number(rnd),
+        animalList[rnd % animalList.length].continents,
+        ["Meat", "Fish"][rnd % 2]
+    ))
+
+}
+
 const displayEnclosures = (): void => {
 
     gehegeDiv.innerHTML = "";
@@ -84,10 +107,20 @@ const displayEnclosures = (): void => {
             if (animal.enclosureId == enclosure.id) {
 
                 const li = document.createElement("li") as HTMLLIElement
-                li.textContent = animal.emoji
-                li.addEventListener("mousemove", (event) => {
-                    console.log(animal, event);
-                })
+
+                li.classList.add("popover");
+                li.innerHTML = animal.emoji + `<div class="popover-content">
+                <p>Name: ${animal.name}</p>
+                <p>Animal: ${animal.tierName}</p>
+                <p>YoB: ${animal.yearOfBirth}</p>
+                <p>Needs: ${animal.specialNeeds}</p>
+                <p>type: ${animal.type}</p>
+                <p>continents: ${animal.continents}</p>
+                </div>`
+                // li.addEventListener("mousemove", (event) => {
+                //     console.log(animal, event);
+                // })
+                // 
 
                 ul.appendChild(li)
             }

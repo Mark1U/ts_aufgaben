@@ -117,10 +117,6 @@ const displayEnclosures = (): void => {
                 <p>type: ${animal.type}</p>
                 <p>continents: ${animal.continents}</p>
                 </div>`
-                // li.addEventListener("mousemove", (event) => {
-                //     console.log(animal, event);
-                // })
-                // 
 
                 ul.appendChild(li)
             }

@@ -103,7 +103,7 @@ const displayEnclosures = (): void => {
 
         const ul = document.createElement("ul")
 
-        allAnimals.forEach((animal) => {
+        allAnimals.forEach((animal, index) => {
             if (animal.enclosureId == enclosure.id) {
 
                 const li = document.createElement("li") as HTMLLIElement
@@ -118,6 +118,12 @@ const displayEnclosures = (): void => {
                 <p>continents: ${animal.continents}</p>
                 </div>`
 
+                li.addEventListener("dblclick", () => {
+                    allAnimals.splice(index, 1)
+                    displayEnclosures()
+                    console.log("Animal Removed");
+
+                })
                 ul.appendChild(li)
             }
         })

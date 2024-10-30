@@ -38,6 +38,9 @@ const updateDisplay = (minutes: number, seconds: number): void => {
 const startTimer = (): void => {
     if (intervalId) return;
 
+
+    minutesInput.disabled = true;
+
     if (timeLeft == 0) {
         const minutes = parseInt(minutesInput.value, 10);
         if (isNaN(minutes) || minutes <= 0) return;
@@ -63,15 +66,13 @@ const pauseTimer = (): void => {
     if (intervalId) {
         clearInterval(intervalId);
         intervalId = undefined;
-    } else {
-        startTimer()
     }
 }
 
 const restartTimer = (): void => {
     pauseTimer();
     timeLeft = 0;
-    minutesInput.value = "";
+    startTimer()
 }
 
 const resetTimer = (): void => {
@@ -79,6 +80,7 @@ const resetTimer = (): void => {
     pauseTimer();
     updateDisplay(0, 0);
     minutesInput.value = "";
+    minutesInput.disabled = false;
 }
 
 startBtn.addEventListener('click', startTimer);

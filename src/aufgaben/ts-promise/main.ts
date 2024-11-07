@@ -124,16 +124,14 @@ ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accus
 duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor 
 sit amet.`.split(/[.,\s]+/).filter(x => x.length > 0);
 
-        if (txtArr.length > numberOfWords) {
-            reject(`Number of words (${txtArr.length}) cannot exceed ` + numberOfWords)
+        if (numberOfWords > 50) {
+            reject(`Number of words cannot exceed 50`)
         }
-        console.log(txtArr);
-
-        resolve(txtArr);
+        resolve(txtArr.splice(0, numberOfWords));
     });
 }
 
-await generateLoremIpsum(100)
+await generateLoremIpsum(30)
     .then((txtArr) => {
         return txtArr.map(x => x.toUpperCase())
     })

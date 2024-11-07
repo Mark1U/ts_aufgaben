@@ -122,11 +122,13 @@ duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
 ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo 
 duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor 
-sit amet.`.split(" ")
+sit amet.`.split(/[.,\s]+/).filter(x => x.length > 0);
 
         if (txtArr.length > numberOfWords) {
             reject(`Number of words (${txtArr.length}) cannot exceed ` + numberOfWords)
         }
+        console.log(txtArr);
+
         resolve(txtArr);
     });
 }
@@ -139,9 +141,7 @@ await generateLoremIpsum(100)
         return txtArr.map(x => x
             .replace("L", "")
             .replace("T", "")
-            .replace("U", "")
-            .replace(",", "")
-            .replace(".", ""))
+            .replace("U", ""))
     }).then((txtArr) => {
         return txtArr.filter(x => x.length <= 8)
     })

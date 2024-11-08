@@ -29,7 +29,6 @@ function pay(customerDiv: HTMLDivElement): Promise<void> {
             addStatusMessage('💳 Bezahlung durchführen', customerDiv)
             resolve()
         }, getRandomDurationInMilliseconds());
-        resolve()
     })
 }
 

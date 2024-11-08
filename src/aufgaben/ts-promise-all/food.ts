@@ -16,17 +16,15 @@ function addStatusMessage(txtContent: string, customerDiv: HTMLDivElement) {
 function order(customerNumber: number, customerDiv: HTMLDivElement): Promise<void> {
     return new Promise((resolve) => {
         addStatusMessage(customerNumber + '. Person in der Reihe', customerDiv)
-        setTimeout(() => {
-            addStatusMessage('📝 Bestellung Aufnehmen', customerDiv)
-            resolve()
-        }, getRandomDurationInMilliseconds());
+        addStatusMessage('📝 Bestellung Aufnehmen.', customerDiv)
+        resolve()
     })
 }
 
 function pay(customerDiv: HTMLDivElement): Promise<void> {
     return new Promise((resolve) => {
         setTimeout(() => {
-            addStatusMessage('💳 Bezahlung durchführen', customerDiv)
+            addStatusMessage('💳 Bezahlung durchführen.', customerDiv)
             resolve()
         }, getRandomDurationInMilliseconds());
     })
@@ -34,8 +32,9 @@ function pay(customerDiv: HTMLDivElement): Promise<void> {
 
 function makeBurger(customerDiv: HTMLDivElement): Promise<void> {
     return new Promise((resolve) => {
+        addStatusMessage('🍔 Burger Zubereitung.', customerDiv)
         setTimeout(() => {
-            addStatusMessage('🍔 Zubereitung', customerDiv)
+            addStatusMessage('🍔 Burger Fertig.', customerDiv)
             resolve()
         }, getRandomDurationInMilliseconds());
     })
@@ -43,8 +42,9 @@ function makeBurger(customerDiv: HTMLDivElement): Promise<void> {
 
 function makeFries(customerDiv: HTMLDivElement): Promise<void> {
     return new Promise((resolve) => {
+        addStatusMessage('🍟 Pommes Zubereitung.', customerDiv)
         setTimeout(() => {
-            addStatusMessage('🍟 Zubereitung', customerDiv)
+            addStatusMessage('🍟 Pommes fertig.', customerDiv)
             resolve()
         }, getRandomDurationInMilliseconds());
     })
@@ -52,8 +52,9 @@ function makeFries(customerDiv: HTMLDivElement): Promise<void> {
 
 function makeDrink(drink: string, customerDiv: HTMLDivElement): Promise<void> {
     return new Promise((resolve) => {
+        addStatusMessage(`🥤 Fülle ${drink} ein.`, customerDiv)
         setTimeout(() => {
-            addStatusMessage(`🥤 Fülle ${drink} ein`, customerDiv)
+            addStatusMessage(`🥤 ${drink} fertig.`, customerDiv)
             resolve()
         }, getRandomDurationInMilliseconds());
     })
@@ -66,7 +67,10 @@ function createCustomerOrder(customerNumber: number, drink: string) {
     processOrder(customerNumber, drink, customerDiv)
 }
 
+let orderCount = 0;
+
 function processOrder(customerNumber: number, drink: string, customerDiv: HTMLDivElement) {
+    orderCount++;
     Promise.all([
         order(customerNumber, customerDiv),
         pay(customerDiv),
@@ -76,6 +80,11 @@ function processOrder(customerNumber: number, drink: string, customerDiv: HTMLDi
     ]).then(() => {
         console.log('Bestellung abgeschlossen.');
         customerDiv.innerHTML += '✅ Bestellung abgeschlossen.<br>';
+        orderCount--
+
+        if (orderCount == 0) {
+            ordersDiv.innerHTML += '<p>🎉 Alle Bestellungen abgeschlossen.<p>'
+        }
     });
 }
 

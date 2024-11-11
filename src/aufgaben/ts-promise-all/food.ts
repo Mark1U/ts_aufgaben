@@ -1,3 +1,7 @@
+import { v4 as uuidv4 } from 'uuid'
+console.log(uuidv4());
+
+
 const ordersDiv = document.getElementById('orders')!;
 
 document.getElementById('startSimulation')?.addEventListener('click', () => {
@@ -8,6 +12,7 @@ document.getElementById('startSimulation')?.addEventListener('click', () => {
     createCustomerOrder(2, 'Sprite');
     createCustomerOrder(3, 'Wasser');
 });
+
 
 function addStatusMessage(txtContent: string, customerDiv: HTMLDivElement) {
     customerDiv.innerHTML += txtContent + '<br>'

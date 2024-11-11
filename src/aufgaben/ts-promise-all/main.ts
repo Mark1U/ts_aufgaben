@@ -55,7 +55,7 @@ function sortDesc(nums: number[]): number[] {
 }
 
 function dblData(nums: number[]): number[] {
-    return [...nums, ...nums,]
+    return nums.map(num => num * 2)
 }
 
 const map1 = processData([0, 11, 9, 3, 6, 23], sortDesc, dblData)

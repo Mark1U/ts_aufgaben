@@ -23,11 +23,11 @@ function displayNews(news: INews) {
 
     news.articles.forEach((article) => {
         const div = document.createElement('div')
-        div.innerHTML = `<div class='card'>
+        div.className = "card"
+        div.innerHTML = `
     <h2>${article.title}</h2>    
     <p>${article.description}</p>    
-    <img src='${article.urlToImage}'>
-</div>`
+    <img src='${article.urlToImage}'>`
         const btn = document.createElement('button')
         btn.className = "btn-cat"
         btn.textContent = "Zum Article"

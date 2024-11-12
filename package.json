@@ -9,11 +9,13 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/node": "^22.9.0",
     "typescript": "^5.5.3",
     "vite": "^5.4.1"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
     "email-validator": "^2.0.4",
     "uuid": "^11.0.3"
   }

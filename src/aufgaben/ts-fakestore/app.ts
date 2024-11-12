@@ -65,7 +65,7 @@ sortDir.addEventListener('change', () => {
     console.log(sortDir.value)
     switch (sortDir.value) {
         case 'age_asc': productList = productListWeb.sort((a: Product, b: Product) => a.id - b.id); break;
-        case 'age_desc': productList = productListWeb.sort((a: Product, b: Product) => b.price - a.price); break;
+        case 'age_desc': productList = productListWeb.sort((a: Product, b: Product) => b.id - a.id); break;
         case 'price_asc': productList = productListWeb.sort((a: Product, b: Product) => a.price - b.price); break;
         case 'price_desc': productList = productListWeb.sort((a: Product, b: Product) => b.price - a.price); break;
         case 'rating_asc': productList = productListWeb.sort((a: Product, b: Product) => a.rating.rate - b.rating.rate); break;

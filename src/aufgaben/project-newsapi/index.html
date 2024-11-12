@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="./app.ts"></script>
-    <title>Fake Store</title>
+    <script type="module" src="./app.ts" defer></script>
     <style>
         #products {
             margin-top: 32px;
@@ -154,30 +153,28 @@
             transform: translate(2px, 2px);
         }
     </style>
+    <title>News API</title>
 </head>
 
 <body>
-    <h1>SuperFake Store</h1>
+    <h1>News API</h1>
     <div class="search">
         <div>
-            <input type="text" name="Search" id="search" placeholder="Search by title">
-            <select title="Sort by" name="sort" id="sortDir">
-                <option value="age_desc" default>⬇️ Catalog</option>
-                <option value="age_asc">⬆️ Catalog</option>
-                <option value="price_desc">⬇️ Price</option>
-                <option value="price_asc">⬆️ Price</option>
-                <option value="rating_desc">⬇️ Rating</option>
-                <option value="rating_asc">⬆️ Rating</option>
-
+            <input type="text" name="Search" id="searchInput" placeholder="Search by title">
+            <select title="Sprache" name="country" id="countrySelect">
+                <option value="us" default>english</option>
+                <option value="de">deutsch</option>
+            </select>
+            <select title="Sort by" name="sort" id="sortSelect">
+                <option value="relevance" default>Relevanz</option>
+                <option value="age">Alter</option>
+                <option value="popularity">Popularity</option>
             </select>
         </div>
-        <div class="filter">
-            <p>Filter by Categories</p>
-            <div id="filterBtns"></div>
-        </div>
+        <button id="searchBtn">Suche</button>
     </div>
 
-    <div id="products">
+    <div id="articles">
     </div>
 </body>
 
